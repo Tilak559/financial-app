@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0a0d0a;
+  --panel: #0e120e;
+  --card: #111611;
+  --cardElevated: #131a13;
+  --text: #f0f4f0;
+  --textMuted: #8b9a8b;
+  --navInactive: #ffffff;
+  --accent: #00c853;
+  --accentHover: #00e676;
+  --accentSubtle: rgba(0, 200, 83, 0.12);
+  --border: #1a221a;
+  --negative: #f44336;
+  --resultBlock: #0d130d;
+  --resultEstimated: #00c853;
+  --resultInvested: #7eb8da;
+  --resultGains: #ffb74d;
+}
+
+.nav-active {
+  background: linear-gradient(to right, var(--panel), var(--accent));
+  color: white;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.btn-deposit {
+  background-color: var(--accent);
+  color: white;
+}
+
+.btn-deposit:hover {
+  background-color: var(--accentHover);
+}
+
+.card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.light {
+  --bg: #eef1f5;
+  --panel: #ffffff;
+  --card: #ffffff;
+  --cardElevated: #ffffff;
+  --navInactive: #1a1d21;
+  --text: #1a1d21;
+  --textMuted: #5c6470;
+  --accent: #1b5e20;
+  --accentHover: #2e7d32;
+  --accentSubtle: rgba(27, 94, 32, 0.08);
+  --border: #e2e6eb;
+  --negative: #d32f2f;
+  --resultBlock: #f5f7fa;
+  --resultEstimated: #1b5e20;
+  --resultInvested: #1565c0;
+  --resultGains: #e65100;
+}
+
+.light .nav-active {
+  background: linear-gradient(to right, var(--border), var(--accent));
+  color: var(--text);
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.light .card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+body {
+  @apply antialiased;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.toggle-switch {
+  @apply relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border border-transparent transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2 focus:ring-offset-[var(--bg)];
+  background-color: var(--border);
+}
+
+.toggle-switch:focus {
+  outline: none;
+}
+
+.toggle-switch.on {
+  background-color: var(--accent);
+}
+
+.toggle-switch-thumb {
+  @apply pointer-events-none absolute inline-block h-5 w-5 rounded-full bg-white shadow ring-0 transition-transform;
+  top: 2px;
+  left: 2px;
+  transform: translateX(0);
+}
+
+.toggle-switch.on .toggle-switch-thumb {
+  transform: translateX(20px);
+}
